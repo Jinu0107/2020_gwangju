@@ -1,0 +1,401 @@
+/* 공통 영역 시작 */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    text-decoration: none !important;
+    list-style: none;
+    color: #222;
+    font-weight: lighter;
+    font-family: '맑은 고딕';
+}
+
+body {
+    overflow-x: hidden;
+    position: relative;
+}
+
+input {
+    border: none;
+    padding-left: 20px;
+}
+
+.container_1140 {
+    width: 1140px;
+    height: 100%;
+    margin: 0 auto;
+    position: relative;
+}
+
+.container_480 {
+    width: 480px;
+    height: 100%;
+    margin: 0 auto;
+    position: relative;
+}
+
+.flex_c {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.flex_b {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.ab_c {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.img_cover {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+}
+
+input, select, textarea, button {
+    outline: none;
+    border: 1px solid #dfdfdf;
+    background-color: #fff;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+
+.section_title hr {
+    border: none;
+    width: 40px;
+    height: 3px;
+    background-color: #d33;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+.section_title h1 {
+    font-size: 30px;
+    margin-bottom: 30px;
+}
+
+.section_title p {
+    color: #999;
+    margin-bottom: 40px;
+}
+
+.section_title.center {
+    text-align: center;
+}
+
+.section_title.center hr {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.btn0 {
+    /* all: unset; */
+    padding: 8px 16px;
+    font-weight: bold;
+    cursor: pointer;
+    border: 1px solid #d33;
+    transition: .5s;
+}
+
+.btn1 {
+    background-color: #d33;
+    color: #f3f3f3;
+}
+
+.btn2 {
+    background-color: #fff;
+    color: #d33;
+}
+
+.btn0:hover {
+    filter: grayscale();
+}
+
+.card {
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    border: 1px solid #dfdfdf;
+}
+
+.card .img {
+    width: 100%;
+    height: 50%;
+    overflow: hidden;
+}
+
+.card .text {
+    width: 100%;
+    height: 50%;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.card .text .title {
+    font-size: 20px;
+}
+
+.card .text .content {
+    font-size: 14px;
+    color: #888;
+}
+
+/* 공통 끝 */
+
+/* 헤더영역 */
+
+header {
+    width: 100%;
+    height: 120px;
+    position: fixed;
+    top: 0;
+    z-index: 10;
+}
+
+header>.header_top {
+    width: 100%;
+    height: 40px;
+    background-color: #f1f1f1;
+}
+
+header>.header_top input {
+    background-color: #f1f1f1;
+    border: none;
+    font-weight: bold;
+}
+
+header>.header_top nav {
+    display: flex;
+}
+
+header>.header_top a {
+    font-size: 12px;
+    width: 80px;
+    color: #aaa;
+}
+
+header>.header_top select {
+    border: none;
+    background-color: #f1f1f1;
+    font-size: 12px;
+    color: #aaa;
+}
+
+header>.header_top select:hover, header>.header_top a:hover {
+    color: #222;
+}
+
+header>.header_bottom {
+    width: 100%;
+    height: 80px;
+    background-color: #fff;
+}
+
+header>.header_bottom nav {
+    height: 100%;
+    display: flex;
+}
+
+header>.header_bottom .menu_2depth {
+    position: fixed;
+    width: 100%;
+    top: 120px;
+    left: 0px;
+    height: 0px;
+    background-color: #fffc;
+    transition: all 0.5s;
+    overflow: hidden;
+}
+
+header>.header_bottom .menu_2depth .container_1140 {
+    display: flex;
+    justify-content: flex-end;
+}
+
+header>.header_bottom .menu_2depth .container_1140 div {
+    width: 110px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+header>.header_bottom nav:hover~.menu_2depth, header>.header_bottom .menu_2depth:hover {
+    height: 300px;
+}
+
+header>.header_bottom a {
+    color: #222;
+    width: 110px;
+    height: 100%;
+}
+
+header>.header_bottom a:hover {
+    color: #d33;
+}
+
+/* 헤더 끝 */
+
+/* 비주얼 시작 */
+
+.visual {
+    margin-top: 120px;
+    width: 100%;
+    height: calc(100vh - 120px);
+    position: relative;
+}
+
+.visual .img_container {
+    width: 100%;
+    height: 100%;
+}
+
+.visual .img_container img {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    object-fit: cover;
+    filter: brightness(60%);
+    animation: img_slide 9s infinite;
+}
+
+.visual .img_container img:nth-child(1) {
+    animation-delay: -3s;
+}
+
+.visual .img_container img:nth-child(3) {
+    animation-delay: -6s;
+}
+
+@keyframes img_slide {
+    000.00% {
+        opacity: 0;
+    }
+    030.00% {
+        opacity: 0;
+    }
+    033.33% {
+        opacity: 1;
+    }
+    063.33% {
+        opacity: 1;
+    }
+    066.66% {
+        opacity: 0;
+    }
+    100.00% {
+        opacity: 0;
+    }
+}
+
+.visual .text {
+    color: #fff;
+    font-size: 30px;
+    font-weight: bold;
+    animation: text_slide 9s infinite;
+    text-align: center;
+}
+
+.visual .text:nth-child(2) {
+    animation-delay: -3s;
+}
+
+.visual .text:nth-child(4) {
+    animation-delay: -6s;
+}
+
+@keyframes text_slide {
+    000.00% {
+        opacity: 0;
+    }
+    030.00% {
+        opacity: 0;
+    }
+    033.33% {
+        opacity: 1;
+    }
+    063.33% {
+        opacity: 1;
+    }
+    066.66% {
+        opacity: 0;
+    }
+    100.00% {
+        opacity: 0;
+    }
+}
+
+/* 비주얼 끝 */
+
+/* 추천 축제 시작 */
+
+.recommend {
+    background-color: #f7f7f7;
+    width: 100%;
+    height: 700px;
+    padding: 48px 0;
+}
+
+.recommend .card_group {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 450px;
+    grid-gap: 30px;
+}
+
+.recommend .card_group .card img {
+    transform: scale(1.3);
+    transition: .5s;
+}
+
+.recommend .card_group .card img:hover {
+    transform: scale(1);
+}
+
+/* 추천 축제 끝 */
+
+/* 이달의 축제 시작 */
+
+.monthly {
+    padding: 45px 0;
+    width: 100%;
+    height: 1100px;
+    background-color: #fff;
+}
+
+.monthly .card_group {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2 , 450px);
+    grid-gap: 30px;
+}
+
+
+.monthly .card .content {
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.monthly .card .text:hover > .content {
+    height: 90%;
+    white-space: normal;
+    overflow-y: auto;
+}
+
+/* 이달의 축제 끝 */
