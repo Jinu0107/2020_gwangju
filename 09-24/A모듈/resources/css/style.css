@@ -22,7 +22,7 @@ input {
     padding-left: 20px;
 }
 
-.container_1140 {
+.container {
     width: 1140px;
     height: 100%;
     margin: 0 auto;
@@ -48,6 +48,17 @@ input {
     justify-content: space-between;
 }
 
+.flex_a {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.flex_d {
+    display: flex;
+    flex-direction: column;
+}
+
 .ab_c {
     position: absolute;
     top: 50%;
@@ -70,7 +81,6 @@ input, select, textarea, button {
 .bold {
     font-weight: bold;
 }
-
 
 .section_title hr {
     border: none;
@@ -101,12 +111,12 @@ input, select, textarea, button {
 }
 
 .btn0 {
-    /* all: unset; */
     padding: 8px 16px;
     font-weight: bold;
     cursor: pointer;
     border: 1px solid #d33;
     transition: .5s;
+    font-size: 13px;
 }
 
 .btn1 {
@@ -120,7 +130,7 @@ input, select, textarea, button {
 }
 
 .btn0:hover {
-    filter: grayscale();
+    filter: grayscale(100);
 }
 
 .card {
@@ -164,6 +174,7 @@ header {
     position: fixed;
     top: 0;
     z-index: 10;
+    box-shadow: 0px 1px 2px #0001;
 }
 
 header>.header_top {
@@ -221,12 +232,20 @@ header>.header_bottom .menu_2depth {
     overflow: hidden;
 }
 
-header>.header_bottom .menu_2depth .container_1140 {
+header>.header_bottom .ham {
+    display: none;
+}
+
+header>.header_bottom .ham_menu {
+    display: none;
+}
+
+header>.header_bottom .menu_2depth .container {
     display: flex;
     justify-content: flex-end;
 }
 
-header>.header_bottom .menu_2depth .container_1140 div {
+header>.header_bottom .menu_2depth .container div {
     width: 110px;
     height: 100%;
     display: flex;
@@ -347,7 +366,6 @@ header>.header_bottom a:hover {
 .recommend {
     background-color: #f7f7f7;
     width: 100%;
-    height: 700px;
     padding: 48px 0;
 }
 
@@ -374,17 +392,15 @@ header>.header_bottom a:hover {
 .monthly {
     padding: 45px 0;
     width: 100%;
-    height: 1100px;
     background-color: #fff;
 }
 
 .monthly .card_group {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(2 , 450px);
+    grid-template-rows: repeat(2, 450px);
     grid-gap: 30px;
 }
-
 
 .monthly .card .content {
     text-overflow: ellipsis;
@@ -392,10 +408,278 @@ header>.header_bottom a:hover {
     overflow: hidden;
 }
 
-.monthly .card .text:hover > .content {
+.monthly .card .text:hover>.content {
     height: 90%;
     white-space: normal;
     overflow-y: auto;
 }
 
 /* 이달의 축제 끝 */
+
+/* 축제 가이드 시작 */
+
+.guide {
+    width: 100%;
+    padding: 45px 0;
+    background-color: #f7f7f7;
+}
+
+.guide .item_group {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: 130px;
+    grid-gap: 20px;
+}
+
+.guide .item_group .item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: .5s;
+}
+
+.guide .item_group .item:hover {
+    transform: translateY(-20px);
+    box-shadow: 1px 5px 20px 1px #0001;
+}
+
+.guide .item_group .item .icon {
+    width: 100%;
+    margin: 20px 0;
+}
+
+.guide .item_group .item .icon>i {
+    color: #d33;
+    font-size: 40px;
+}
+
+/* 축제 가이드 끝 */
+
+/* 최근 기사 시작 */
+
+.articles {
+    width: 100%;
+    padding: 45px 0;
+    background-color: #fff;
+}
+
+.articles .tbl_input {
+    display: none;
+}
+
+.articles .label_group label {
+    cursor: pointer;
+    margin-right: 20px;
+    font-size: 20px;
+}
+
+.articles #tbl_1:checked~.label_group>label:nth-child(1), .articles #tbl_2:checked~.label_group>label:nth-child(2) {
+    color: #d33;
+    border-bottom: 3px solid #d33;
+    padding-bottom: 10px;
+}
+
+.articles #tbl_1:checked~.tbl_2, .articles #tbl_2:checked~.tbl_1 {
+    display: none;
+}
+
+.articles table {
+    margin: 30px 0;
+    border-bottom: 2px solid #dee2e6;
+}
+
+.articles table tbody tr {
+    transition: .5s;
+    cursor: pointer;
+}
+
+.articles table tbody tr:hover {
+    background-color: #f7f7f7;
+    transform: translateX(10px);
+}
+
+/* 최근 기사 끝 */
+
+/* 푸터 시작 */
+
+footer {
+    width: 100%;
+    height: 168px;
+    background-color: #333;
+}
+
+footer .logo {
+    width: 250px;
+    height: 80px;
+}
+
+footer .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+footer .footer_text_box {
+    width: 55%;
+}
+
+footer * {
+    color: #ccc;
+}
+
+footer a:hover {
+    color: #f7f7f7;
+}
+
+/* 푸터 끝 */
+
+/* 반응형 시작 */
+
+@media (max-width:480px) {
+    .container {
+        width: 460px;
+    }
+    header .header_top nav {
+        display: none;
+    }
+    header .header_bottom nav {
+        display: none;
+    }
+    header .header_bottom .ham {
+        display: block;
+        cursor: pointer;
+    }
+    header .header_bottom .ham i {
+        font-size: 30px;
+    }
+    header .header_bottom .ham_menu {
+        display: block;
+        position: fixed;
+        left: 0;
+        top: 120px;
+    }
+    header .header_bottom .ham_menu nav {
+        height: 0;
+        display: flex;
+        width: 100vw;
+        background-color: #fffc;
+        flex-direction: column;
+        align-items: center;
+        overflow: hidden;
+        transition: .5s;
+    }
+    header .header_bottom .ham_menu:hover nav, header .header_bottom .ham:hover~.ham_menu nav {
+        height: 550px;
+    }
+    header .header_bottom .ham_menu nav * {
+        margin: 5px 0;
+    }
+    .section .container {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+    }
+    .monthly .card_group {
+        grid-template-columns: repeat(1, 400px);
+        grid-template-rows: repeat(6, 450px);
+    }
+    .recommend .card_group {
+        grid-template-columns: repeat(1, 400px);
+        grid-template-rows: repeat(3, 450px);
+    }
+    .guide .item_group {
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(2, 130px);
+        grid-gap: 10px;
+    }
+    .articles table * {
+        font-size: 13px;
+    }
+    footer {
+        height: auto;
+    }
+    footer .container {
+        flex-direction: column;
+    }
+    footer .footer_text_box {
+        width: 100%;
+        text-align: center;
+    }
+    footer * {
+        font-size: 12px;
+    }
+}
+
+/* 반응형 끝 */
+
+/* 서브 비주얼 시작 */
+
+.sub_visual {
+    margin-top: 120px;
+    width: 100%;
+    height: 350px;
+    position: relative;
+}
+
+.sub_visual .img_container {
+    width: 100%;
+    height: 100%;
+}
+
+.sub_visual .img_container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(60%);
+}
+
+.sub_visual .text {
+    text-align: center;
+}
+
+.sub_visual .text span {
+    color: #fff;
+    font-size: 35px;
+}
+
+.sub_visual .text p {
+    color: #fff;
+    font-size: 25px;
+}
+
+/* 서브 비주얼 끝 */
+
+/* 서브 뉴스 시작 */
+.sub_news {
+    width: 100%;
+    padding: 45px 0;
+}
+
+.sub_news .search_box {
+    width: 100%;
+    height: 50px;
+    border-bottom: 1px solid #d33;
+    margin: 80px 0;
+}
+
+.sub_news .search_box > input {
+    border: none;
+    width: 90%;
+    height: 100%;
+}
+
+.sub_news table {
+    border-bottom: 1px solid #dee2e6;
+}
+
+.sub_news table tbody tr{
+    cursor: pointer;
+    transition: .5s;
+}
+
+.sub_news table tbody tr:hover {
+    background-color: #f7f7f7;
+    transform: translateX(10px);
+}
+
+/* 서브 뉴스 끝 */

@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>전북 축제</title>
-    <!-- <link rel="stylesheet" href="resources/vendor/bootstrap-4.4.1-dist/css/bootstrap.css"> -->
+    <link rel="stylesheet" href="resources/vendor/bootstrap-4.4.1-dist/css/bootstrap.css">
     <link rel="stylesheet" href="resources/vendor/fontawesome/css/font-awesome.css">
     <link rel="stylesheet" href="resources/css/style.css">
 
@@ -16,13 +16,13 @@
 
     <header>
         <div class="header_top">
-            <div class="container_1140 flex_b">
+            <div class="container flex_b">
                 <div class="search">
                     <i class="fa fa-search"></i>
                     <input type="text" placeholder="Search..">
                 </div>
                 <nav>
-                    <select name="" id="">
+                    <select name="select_1" id="select_1">
                         <option value="">한국어 </option>
                         <option value="">English</option>
                         <option value="">中文(简体)</option>
@@ -34,7 +34,7 @@
             </div>
         </div>
         <div class="header_bottom">
-            <div class="container_1140 flex_b">
+            <div class="container flex_b">
                 <div class="logo">
                     <img src="resources/img/logo.png" alt="" class="img_cover">
                 </div>
@@ -47,7 +47,7 @@
                     <a href="#" class="flex_c">종합지원센터</a>
                 </nav>
                 <div class="menu_2depth">
-                    <div class="container_1140">
+                    <div class="container">
                         <div>
                             <a href="#" class="flex_c">공지사항</a>
                             <a href="#" class="flex_c">센터 소개</a>
@@ -57,12 +57,38 @@
                         </div>
                     </div>
                 </div>
+                <div class="ham">
+                    <i class="fa fa-bars"></i>
+                </div>
+                <div class="ham_menu">
+                    <nav>
+                        <select name="select_2" id="select_2">
+                            <option value="">한국어 </option>
+                            <option value="">English</option>
+                            <option value="">中文(简体)</option>
+                        </select>
+                        <a href="#" class="flex_c">전라북도청</a>
+                        <a href="#" class="flex_c">회원가입</a>
+                        <a href="#" class="flex_c">로그인</a>
+                        <a href="#" class="flex_c">HOME</a>
+                        <a href="#" class="flex_c">전북 대표 축제</a>
+                        <a href="#" class="flex_c">축제 정보</a>
+                        <a href="#" class="flex_c">축제 일정</a>
+                        <a href="#" class="flex_c">환율안내</a>
+                        <a href="#" class="flex_c">종합지원센터</a>
+                        <a href="#" class="flex_c">공지사항</a>
+                        <a href="#" class="flex_c">센터 소개</a>
+                        <a href="#" class="flex_c">관광정보 문의</a>
+                        <a href="#" class="flex_c">데이터 공개</a>
+                        <a href="#" class="flex_c">찾아오시는 길</a>
+                    </nav>
+                </div>
             </div>
         </div>
     </header>
     <!-- 헤더 끝 -->
     <!-- 비주얼 시작 -->
-    <div class="visual">
+    <div class="visual section">
         <div class="img_container">
             <img src="resources/img/visual/1.jpg" alt="">
             <img src="resources/img/visual/2.jpg" alt="">
@@ -85,8 +111,8 @@
     </div>
     <!-- 비주얼 끝 -->
     <!-- 이달의 축제 시작 -->
-    <div class="monthly">
-        <div class="container_1140">
+    <div class="monthly section">
+        <div class="container">
             <div class="card_group">
                 <div class="section_title">
                     <hr>
@@ -192,8 +218,8 @@
     </div>
     <!-- 이달의 축제 끝 -->
     <!-- 추천 축제 시작 -->
-    <div class="recommend">
-        <div class="container_1140">
+    <div class="recommend section">
+        <div class="container">
             <div class="section_title center">
                 <hr>
                 <h1><span class="bold">RECOMMEND</span> FESTIVAL</h1>
@@ -230,7 +256,7 @@
                     </div>
                     <div class="text">
                         <div class="title"><span class="bold">복분자와 수박 대축제(고창)</span></div>
-                        <div class="content">기간: 2019.06.21~06.23</div>
+                        <div class="content">내용: 2019.06.21~06.23</div>
                         <div class="btn_group">
                             <button class="btn0 btn1">자세히 보기</button>
                         </div>
@@ -240,6 +266,153 @@
         </div>
     </div>
     <!-- 추천 축제 끝 -->
+    <!-- 축제 가이드 시작 -->
+    <div class="guide section">
+        <div class="container">
+            <div class="section_title center">
+                <hr>
+                <h1><span class="bold">FESTIVAL</span> GUIDE</h1>
+                <p>축제 가이드</p>
+            </div>
+            <div class="item_group">
+                <div class="item ">
+                    <div class="icon flex_c"><i class="fa fa-map-marker"></i></div>
+                    <p><a href="#"><i class="fa fa-link"></i></a> 내주변축제</p>
+                </div>
+                <div class="item ">
+                    <div class="icon flex_c"><i class="fa fa-lightbulb-o"></i></div>
+                    <p><a href="#"><i class="fa fa-link"></i></a> 축제 홍보물 신청</p>
+                </div>
+                <div class="item ">
+                    <div class="icon flex_c"><i class="fa fa-bus"></i></div>
+                    <p><a href="#"><i class="fa fa-link"></i></a> 교통안내</p>
+                </div>
+                <div class="item ">
+                    <div class="icon flex_c"><i class="fa fa-map"></i></div>
+                    <p><a href="#"><i class="fa fa-link"></i></a> 관광안내소</p>
+                </div>
+                <div class="item ">
+                    <div class="icon flex_c"><i class="fa fa-building"></i></div>
+                    <p><a href="#"><i class="fa fa-link"></i></a> 시티투어</p>
+                </div>
+                <div class="item ">
+                    <div class="icon flex_c"><i class="fa fa-leaf"></i></div>
+                    <p><a href="#"><i class="fa fa-link"></i></a> 전북행 휴(休)</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 축제 가이드 끝 -->
+
+    <!-- 최근 기사 시작 -->
+    <div class="articles section">
+        <div class="container">
+            <div class="section_title center">
+                <hr>
+                <h1><span class="bold">RECENT</span> ARTICLES</h1>
+                <p>최근 기사</p>
+            </div>
+            <input type="radio" class="tbl_input" name="tbl_input" id="tbl_1" checked>
+            <input type="radio" class="tbl_input" name="tbl_input" id="tbl_2">
+            <div class="label_group">
+                <label for="tbl_1">공지사항</label>
+                <label for="tbl_2">축제뉴스</label>
+            </div>
+            <table class="table tbl_1">
+                <thead>
+                    <tr>
+                        <th style="width: 15%;">글번호</th>
+                        <th style="width: 70%;">제목</th>
+                        <th style="width: 15%;">작성일</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>2020년 하반기 관광진흥개발기금 융자지원지침 안내</td>
+                        <td>2020-08-12</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>군산공항 이용안내(2019.03.31 부터~)</td>
+                        <td>2020-08-07</td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>청정전북 숨겨진 테마별 관광지</td>
+                        <td>2020-08-04</td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>낙후된 전북 동부권 개발 3단계 착수 … 5년간 1800억 투입</td>
+                        <td>2020-08-01</td>
+                    </tr>
+                    <tr>
+                        <td>5</td>
+                        <td>전북관광브랜드공연 뮤지컬‘홍도1589’공연 재개</td>
+                        <td>2020-07-27</td>
+                    </tr>
+                </tbody>
+            </table>
+            <table class="table tbl_2">
+                <thead>
+                    <tr>
+                        <th style="width: 15%;">글번호</th>
+                        <th style="width: 70%;">제목</th>
+                        <th style="width: 15%;">작성일</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>전북도 2020년도 문화관광축제 5개 선정</td>
+                        <td>2020-08-06</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>2020년 시군 축제 평가 및 컨설팅 민간위탁 수탁기관 공개모집 공고</td>
+                        <td>2020-08-01</td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>제16회 익산 천만송이 국화축제 개막…첫날부터 '인산인해'</td>
+                        <td>2020-07-28</td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>핑크빛 물결의 습격, 축제까지 열리는 외래종 '핑크뮬리'</td>
+                        <td>2020-07-23</td>
+                    </tr>
+                    <tr>
+                        <td>5</td>
+                        <td>국립무형유산원에서 펼쳐지는 무형문화재 대축제</td>
+                        <td>2020-07-13</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <!-- 최근 기사 끝 -->
+    <!-- 푸터 시작 -->
+    <footer>
+        <div class="container">
+            <div class="logo">
+                <img class="img_cover" src="resources/img/footer_logo.png" alt="">
+            </div>
+            <div class="footer_text_box">
+                <p class="flex_b">
+                    <a href="#">이용안내</a>
+                    <a href="#">개인정보 처리방침</a>
+                    <a href="#">저작권 보호정책</a>
+                    <a href="#">도로명 주소안내</a>
+                    <a href="#">사이트오류 신고</a>
+                </p>
+                <p>인천시 부평구 무네미로 448번길 77 한국산업인력공단 글로벌숙련기술진흥원</p>
+                <p>COPYRIGHTⓒ 2016 HRDKOREA</p>
+            </div>
+        </div>
+    </footer>
+    <!-- 푸터 끝 -->
 
 
 </body>
