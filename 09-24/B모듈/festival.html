@@ -6,9 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="resources/vendor/bootstrap-4.4.1-dist/css/bootstrap.css">
-    <link rel="stylesheet" href="resources/vendor/fontawesome/css/font-awesome.css">
+    <link rel="stylesheet" href="resources/vendor/fontawesome/css/font-awesome.min.css">
     <link rel="stylesheet" href="resources/css/style.css">
+    <link rel="stylesheet" href="resources/vendor/jquery-ui-1.12.1/jquery-ui.min.css">
     <script src="resources/vendor/jquery-3.5.0.min.js"></script>
+    <script src="resources/vendor/jquery-ui-1.12.1/jquery-ui.min.js"></script>
     <script src="resources/js/Festival.js"></script>
 </head>
 
@@ -89,6 +91,126 @@
     </header>
     <!-- 헤더 끝 -->
 
+    <!-- 대표축제 비주얼 시작 -->
+    <div class="sub_visual">
+        <div class="img_container">
+            <img src="resources/img/common/수정됨_yay13438648.jpg" alt="">
+        </div>
+        <div class="text ab_c ">
+            <span class="bold">전북 대표 축제</span>
+            <p>홈 > 전북 대표 축제</p>
+        </div>
+    </div>
+    <!-- 대표축제 비주얼 끝 -->
+
+    <!-- 대표 축제 리스트 -->
+    <div class="j_festival section">
+        <div class="container">
+            <div class="section_title center">
+                <hr>
+                <h1><span class="bold">JEONBUK</span> FESTIVAL</h1>
+                <p>전북 대표 축제</p>
+            </div>
+            <div class="flex_e">
+                <a href="?page=1&searchType=album"><button class="btn0 festival_btns  btn2" data-type="album"><i
+                            class="fa fa-image"></i>앨범형</button></a>
+                <a href="?page=1&searchType=list"><button class="btn0  festival_btns btn2 disable" data-type="list"><i
+                            class="fa fa-bars"></i>목록형</button></a>
+            </div>
+            <div class="content">
+                <!-- <div class="album">
+                    <div class="main_festival">
+                        <img src="xml/festivalImages/001_10001/10001_1.jpg" alt="" class="img_cover">
+                        <div class="text">
+                            <div class="title">
+                                대표 축제
+                            </div>
+                            <p>대한민국, 춘향에 물들다. 꽃보다 붉은, 춘향과 몽룡의 사랑이 사랑의 도시 남원에서 춘향제로 피어납니다. 민족의 정체성이 위협받는 상황에서 춘향의 정절과 순수한
+                                사랑을
+                                민족운동으로 승화시키며 시작한 춘향제는 90년의 유구한 역사와 전통을 자랑하며 우리들 곁에서 지고지순한 사랑으로 거듭나고 있습니다. 사랑과 만남을 주제로
+                                문화,
+                                공연예술, 체험행사가 가득한 세계적인 사랑 축제의 장으로 여러분을 초대합니다. 대한민국 대표 관광명소 광한루원은 지금 춘향아씨가 그네 타던 그 시절로 돌아가
+                                있답니다. 사랑하는 이와 함께 춘향에 빠져 아름다운 추억을 듬뿍 담아 가시기 바랍니다. </p>
+                            <span>2017.06.24~06.30</span>
+                            <div class="btn_group">
+                                <button class="btn0 btn2">
+                                    자세히 보기
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="festivalList">
+                        <div class="card" data-id="${item.id}" data-toggle="modal" data-target=".view_modal">
+                            <img src="${item.image_path}/${item.images[0]}" alt="No Image" title='No Image'>
+                            <div class="text">
+                                <div class="title">
+                                    ${item.nm}
+                                </div>
+                                <span>${item.dt}</span>
+                            </div>
+                            <div class="cnt flex_c">
+                            </div>
+                        </div>
+                    </div>
+                </div> -->
+                <!-- <div class="list">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th style=" text-align: center; width: 5%;">번호</th>
+                                <th style=" text-align: center; width: 60%;">제목</th>
+                                <th style=" text-align: center; width: 10%;">기간</th>
+                                <th style=" text-align: center; width: 15%;">장소</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td style="text-align: center;">dasdadsads</td>
+                                <td style="text-align: center;">dasads</td>
+                                <td style="text-align: center;">dsa</td>
+                                <td style="text-align: center;">12312342</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div> -->
+            </div>
+            <div class="page_btn_group flex_c">
+
+            </div>
+            <div class="modal" id="view_modal">
+                <div class="inner">
+                    <div class="title">타이틀</div>
+                    <div class="info">
+                        <div class="img_box">
+                            <img src="xml/festivalImages/007_10008/10008_3.jpg" alt="No Image">
+                        </div>
+                        <div class="text">
+                            <table class="table">
+                                <tr>
+                                    <th>지역</th>
+                                    <th>남원</th>
+                                </tr>
+                            </table>
+                            <p>
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam ducimus voluptate
+                                accusamus dolorum recusandae veritatis fugit eos ea, quis sed repellendus, pariatur
+                                debitis velit alias veniam modi error dolor illo!
+                            </p>
+                        </div>
+                    </div>
+                    <div class="slide">
+                        <div class="slide-pannel">
+                            <img src="xml/festivalImages/007_10008/10008_3.jpg" alt="">
+                            <img src="xml/festivalImages/007_10008/10008_3.jpg" alt="">
+                            <img src="xml/festivalImages/007_10008/10008_3.jpg" alt="">
+                        </div>
+                    </div>
+                    <div class="pagination"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 대표 축제 리스트 -->
 
     <!-- 푸터 시작 -->
     <footer>
