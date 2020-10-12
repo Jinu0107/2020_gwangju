@@ -154,6 +154,14 @@ input, select, textarea, button {
     opacity: 0.5;
 }
 
+.btn0:disabled {
+    opacity: 0.5;
+    cursor: default;
+}
+.btn0:disabled:hover {
+    filter: grayscale(0);
+}
+
 .btn0:hover {
     filter: grayscale(1);
 }
@@ -841,8 +849,51 @@ footer a:hover {
     color: #888;
 }
 
+#view_modal .slide {
+    margin: 30px 0;
+    width: 100%;
+    height: 400px;
+    position: relative;
+    overflow: hidden;
+}
+
+#view_modal .slide .slide_pannel {
+    height: 100%;
+    display: flex;
+    position: absolute;
+    left: 0;
+    transition: .5s;
+}
 
 
+#view_modal .inner .pagination > button {
+    margin: 0 6px;
+    outline: none;
+}
 
 
 /* 모달 끝 */
+
+/* 환율안내 시작 */
+
+.current {
+    width: 100%;
+    height: 100%;
+    margin-top: 120px;
+}
+
+.current table th {
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.current table tr.active td {
+    color: #d33;
+    font-weight: bold;
+}
+
+.current table td {
+    font-size: 14px;
+}
+
+/* 환율안내 끝 */

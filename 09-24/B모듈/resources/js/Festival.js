@@ -2,13 +2,13 @@ window.addEventListener('load', () => {
     window.festival = new Festival();
 });
 
-const log = console.log
 class Festival {
     constructor() {
         this.xml;
         this.datas;
         this.$btns = $(".j_festival .page_btn_group");
         this.$content = $('.j_festival .content');
+        this.$modal = $("#view_modal");
         this.init();
     }
 
@@ -24,9 +24,9 @@ class Festival {
             'show': true,
             'hidden': true,
             'modal': true,
-            "autoOpen": true,
+            "autoOpen": false,
         });
-        
+
         this.render();
         this.addEvent();
     }
@@ -99,12 +99,88 @@ class Festival {
 
     addEvent() {
         this.$content.on("click", "[data-target='.view_modal']", this.openFestivalModal);
+        $(document).on("click", ".pagination > button ", this.modalBtnClick);
+    }
+
+    modalBtnClick = e => {
+        let value = e.currentTarget.dataset.value * 1;
+        let imgLen = this.$modal.find(".slide_pannel > img").length;
+        let cno = this.$modal.data("sno");
+        let sno;
+        if (e.currentTarget.classList.contains("rel")) {
+            sno = (cno + value);
+            log(sno);
+        }else {
+            sno = value*1;
+            log(sno);
+        }
+        this.$modal.data("sno" , sno);
+        this.$modal.find(".slide_pannel").css("left" , sno * -100 + "%");
+        this.$modal.find(".pagination .btn1").removeClass("btn1").addClass("btn2");
+        this.$modal.find(".pagination .numBtn").eq(sno).removeClass("btn2").addClass("btn1");
+        this.$modal.find(".pagination .rel").removeAttr("disabled" , "disabled");
+
+        if(sno - 1 < 0){
+            this.$modal.find(".pagination .rel").eq(0).attr("disabled", "disabled");
+        }else if(sno + 1 >= imgLen){
+            this.$modal.find(".pagination .rel").eq(1).attr("disabled", "disabled");
+        }
     }
 
     openFestivalModal = e => {
         let id = e.currentTarget.dataset.id;
-        let festival = this.datas.find(x => x.id == id);
-        log(festival);
+        let data = this.datas.find(x => x.id == id);
+        let htmlImgs = data.images.map(x => `<img src="${data.image_path}/${x}" class="img_cover" style="width : ${100 / data.images.length}%;" alt="No Image" >`);
+        let htmlBtns = `<button class="btn0 btn2 rel" data-value="-1" disabled>&lt;</button>`;
+        for (let i = 1; i <= data.images.length; i++) {
+            htmlBtns += `<button class="btn0 ${i == 1 ? "btn1" : "btn2"} numBtn" data-value="${i - 1}">${i}</button>`;
+        }
+        htmlBtns += `<button class="btn0 btn2 rel" data-value="1">&gt;<button>`;
+        this.$modal.data("sno", 0);
+        $("#view_modal > .inner").empty();
+        $("#view_modal > .inner").append(this.modalDOM(data));
+        $("#view_modal > .inner .slide_pannel").append(htmlImgs.join(''));
+        $("#view_modal > .inner .pagination").append(htmlBtns);
+        $('#view_modal').dialog("open");
+
+    }
+
+    modalDOM(data) {
+        return `
+                       <div class="title">${data.nm}</div>
+                    <div class="info">
+                        <div class="img_box">
+                            <img src="${data.image_path}/${data.images[0]}" alt="No Image">
+                        </div>
+                        <div class="text">
+                            <table class="table">
+                                <tr>
+                                    <th width="30%">지역</th>
+                                    <th width="70%">${data.area}</th>
+                                </tr>
+                                <tr>
+                                    <th width="30%"  >장소</th>
+                                    <th width="70%">${data.location}</th>
+                                </tr>
+                                <tr>
+                                    <th width="30%"  >기간</th>
+                                    <th width="70%">${data.dt}</th>
+                                </tr>
+                            </table>
+                            <p class="cn">
+                                ${data.cn}
+                            </p>
+                        </div>
+                    </div>
+                    <div class="slide">
+                        <div class="slide_pannel" style="width: ${100 * data.images.length}%;">
+                        </div>
+                    </div>
+                    <div class="pagination flex_c">
+                        
+                    </div>
+        `
+
     }
 
     drawAlbum(viewList) {
