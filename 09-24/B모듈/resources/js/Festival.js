@@ -15,7 +15,6 @@ class Festival {
     async init() {
         this.xml = await this.getXML();
         this.datas = this.getDatas();
-        log(this.datas);
 
         $("#view_modal").dialog({
             'width': 800,
@@ -109,10 +108,8 @@ class Festival {
         let sno;
         if (e.currentTarget.classList.contains("rel")) {
             sno = (cno + value);
-            log(sno);
         }else {
             sno = value*1;
-            log(sno);
         }
         this.$modal.data("sno" , sno);
         this.$modal.find(".slide_pannel").css("left" , sno * -100 + "%");
