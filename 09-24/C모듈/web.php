@@ -1,0 +1,20 @@
+<?php
+
+use src\App\Route;
+
+
+Route::get("/" , "MainController@index");
+Route::get("/current" , "MainController@current");
+Route::get("/festival" , "MainController@festival");
+Route::get("/sub" , "MainController@sub");
+Route::get("/login_page" , "MainController@login_page");
+
+Route::post("/login_process" , "UserController@login");
+Route::get("/logout_process" , "UserController@logout");
+
+
+Route::get("/festivalCS" , "MainController@festivalCS");
+Route::get('/down' , "FestivalController@down");
+
+Route::get("/update" ,  "MainController@update");
+
