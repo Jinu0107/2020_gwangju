@@ -48,11 +48,11 @@
                     <img src="resources/img/logo.png" alt="" class="img_cover">
                 </div>
                 <nav>
-                    <a href="#" class="flex_c">HOME</a>
-                    <a href="#" class="flex_c">전북 대표 축제</a>
-                    <a href="#" class="flex_c">축제 정보</a>
-                    <a href="#" class="flex_c">축제 일정</a>
-                    <a href="#" class="flex_c">환율안내</a>
+                    <a href="/" class="flex_c">HOME</a>
+                    <a href="/festival" class="flex_c">전북 대표 축제</a>
+                    <a href="/festivalCS" class="flex_c">축제 정보</a>
+                    <a href="/" class="flex_c">축제 일정</a>
+                    <a href="/current" class="flex_c">환율안내</a>
                     <a href="#" class="flex_c">종합지원센터</a>
                 </nav>
                 <div class="menu_2depth">

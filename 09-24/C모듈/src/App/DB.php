@@ -41,4 +41,9 @@ class DB
         $q->execute($data);
         return $q;
     }
+
+    public static function lastId()
+    {
+        return self::getDB()->lastInsertId();
+    }
 }

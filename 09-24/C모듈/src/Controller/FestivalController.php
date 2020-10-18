@@ -54,4 +54,102 @@ class FestivalController
             unlink($download_name);
         }
     }
+
+    public function update()
+    {
+        $idx = $_POST['idx'];
+        $name = $_POST['name'];
+        $area = $_POST['area'];
+        $date = $_POST['date'];
+        $location = $_POST['location'];
+
+        $delete_img = $_POST['delete_img'];
+        $files = $_FILES['add_img'];
+
+        var_dump($files);
+
+        $data = [$name, $area, $date, $location, $idx];
+        $data = array_map("trim", $data);
+
+        if (in_array("", $data)) {
+            Library::msgAndGo("필수값이 비어있습니다.", "/festivalCS");
+            return;
+        }
+
+        if (!preg_match("/^[0-9]{4}-[0-9]{2}-[0-9]{2} ~ [0-9]{4}-[0-9]{2}-[0-9]{2}$/", $date)) {
+            Library::msgAndGo("날짜 형식이 잘못되었습니다.", "/festivalCS");
+            return;
+        }
+
+        DB::execute("UPDATE festivals SET name = ? , area = ? , date = ? , location = ? WHERE idx = ?", $data);
+        if (count($delete_img) != 1) {
+            foreach ($delete_img as $img_idx) {
+                DB::execute("DELETE from files WHERE idx = ?", [$img_idx]);
+            }
+        }
+        $pidx = $idx;
+        if ($files['name'][0] != "") {
+            foreach ($files['name'] as $key => $value) {
+                $exit = strtolower(explode(".", $value)[count(explode(".", $value)) - 1]);
+                echo $exit;
+                if ($exit != "jpg" && $exit != "png" && $exit != "gif") {
+                    continue;
+                }
+                $filename = time() . "_" . $value;
+                $array = [$pidx, $filename, 0, ""];
+                DB::execute("INSERT INTO files(pidx , name , type, path) value (?,?,?,?)", $array);
+                move_uploaded_file($files['tmp_name'][$key], __IMAGE . "/$filename");
+            }
+        }
+
+        Library::msgAndGo("성공적으로 수정되었습니다.", "/festivalCS");
+    }
+
+
+    public function delete()
+    {
+        $idx = $_GET['idx'];
+        DB::execute("DELETE FROM festivals WHERE idx = ?", [$idx]);
+        Library::msgAndGo("성공적으로 삭제 되었습니다.", "/festivalCS");
+    }
+
+    public function insert()
+    {
+        $name = $_POST['name'];
+        $area = $_POST['area'];
+        $date = $_POST['date'];
+        $location = $_POST['location'];
+        $files = $_FILES['add_img'];
+
+        $data = [$name, $area, $date, $location];
+        $data = array_map("trim", $data);
+        if (in_array("", $data)) {
+            Library::msgAndGo("필수값이 비어있습니다.", "/festivalCS");
+            return;
+        }
+        if (!preg_match("/^[0-9]{4}-[0-9]{2}-[0-9]{2} ~ [0-9]{4}-[0-9]{2}-[0-9]{2}$/", $date)) {
+            Library::msgAndGo("날짜 형식이 잘못되었습니다.", "/festivalCS");
+            return;
+        }
+        $array = [null, 123, $name, $area, $date, $location, ""];
+        DB::execute("INSERT INTO festivals(idx, no, name, area, date, location, content) VALUES(?, ?, ?, ?, ?, ?, ?)", $array);
+
+        $pidx = DB::lastId();
+
+        if ($files['name'][0] != "") {
+            foreach ($files['name'] as $key => $value) {
+                $exit = strtolower(explode(".", $value)[count(explode(".", $value)) - 1]);
+                echo $exit;
+                if ($exit != "jpg" && $exit != "png" && $exit != "gif") {
+                    continue;
+                }
+                $filename = time() . "_" . $value;
+                $array = [$pidx, $filename, 0, ""];
+                DB::execute("INSERT INTO files(pidx , name , type, path) value (?,?,?,?)", $array);
+                move_uploaded_file($files['tmp_name'][$key], __IMAGE . "/$filename");
+            }
+        }
+
+        Library::msgAndGo("성공적으로 추가되었습니다.", "/festivalCS");
+    }
 }

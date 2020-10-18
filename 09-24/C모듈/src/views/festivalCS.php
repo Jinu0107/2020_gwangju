@@ -12,7 +12,7 @@ use src\App\Library; ?>
         </div>
         <div class="btn_group flex_e">
             <?php if (Library::ckeckUser()) : ?>
-                <button class="btn0 btn1">축제 등록</button>
+                <a href="/insert"><button class="btn0 btn1">축제 등록</button></a>
             <?php endif; ?>
         </div>
         <table class="table">
@@ -20,7 +20,7 @@ use src\App\Library; ?>
                 <th width="7%">번호</th>
                 <th width="35%">축제명(사진 수)</th>
                 <th width="20%">다운로드</th>
-                <th width="10%">기간</th>
+                <th width="20%">기간</th>
                 <th width="10%">장소</th>
             </thead>
             <tbody>

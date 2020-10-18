@@ -75,6 +75,12 @@ class MainController extends MasterController
         $images = DB::fetchAll("SELECT * FROM files WHERE pidx = ?", [$idx]);
         $this->render("update", [$result, $images]);
     }
+
+    public function insert()
+    {
+        $this->render("insert");
+        
+    }
 }
 
 MainController::init();

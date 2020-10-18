@@ -17,4 +17,10 @@ Route::get("/festivalCS" , "MainController@festivalCS");
 Route::get('/down' , "FestivalController@down");
 
 Route::get("/update" ,  "MainController@update");
+Route::get("/insert" , "MainController@insert");
+
+Route::post('/update_process' , "FestivalController@update");
+Route::post("/insert_process" , "FestivalController@insert");
+Route::get("/delete_process" , "FestivalController@delete");
+
 

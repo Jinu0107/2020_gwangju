@@ -12,7 +12,6 @@
     font-family: '맑은 고딕';
 }
 
-
 .black_a {
     color: #000;
 }
@@ -91,7 +90,10 @@ input {
     height: 100%;
 }
 
-input, select, textarea, button {
+input,
+select,
+textarea,
+button {
     outline: none;
     border: 1px solid #dfdfdf;
     background-color: #fff;
@@ -218,7 +220,9 @@ input, select, textarea, button {
     color: #888;
 }
 
+
 /* 공통 끝 */
+
 
 /* 헤더영역 */
 
@@ -260,7 +264,8 @@ header>.header_top select {
     color: #aaa;
 }
 
-header>.header_top select:hover, header>.header_top a:hover {
+header>.header_top select:hover,
+header>.header_top a:hover {
     color: #222;
 }
 
@@ -306,7 +311,8 @@ header>.header_bottom .menu_2depth .container div {
     flex-direction: column;
 }
 
-header>.header_bottom nav:hover~.menu_2depth, header>.header_bottom .menu_2depth:hover {
+header>.header_bottom nav:hover~.menu_2depth,
+header>.header_bottom .menu_2depth:hover {
     height: 300px;
 }
 
@@ -320,7 +326,9 @@ header>.header_bottom a:hover {
     color: #d33;
 }
 
+
 /* 헤더 끝 */
+
 
 /* 비주얼 시작 */
 
@@ -413,7 +421,9 @@ header>.header_bottom a:hover {
     }
 }
 
+
 /* 비주얼 끝 */
+
 
 /* 추천 축제 시작 */
 
@@ -439,7 +449,9 @@ header>.header_bottom a:hover {
     transform: scale(1);
 }
 
+
 /* 추천 축제 끝 */
+
 
 /* 이달의 축제 시작 */
 
@@ -468,7 +480,9 @@ header>.header_bottom a:hover {
     overflow-y: auto;
 }
 
+
 /* 이달의 축제 끝 */
+
 
 /* 축제 가이드 시작 */
 
@@ -507,7 +521,9 @@ header>.header_bottom a:hover {
     font-size: 40px;
 }
 
+
 /* 축제 가이드 끝 */
+
 
 /* 최근 기사 시작 */
 
@@ -527,13 +543,15 @@ header>.header_bottom a:hover {
     font-size: 20px;
 }
 
-.articles #tbl_1:checked~.label_group>label:nth-child(1), .articles #tbl_2:checked~.label_group>label:nth-child(2) {
+.articles #tbl_1:checked~.label_group>label:nth-child(1),
+.articles #tbl_2:checked~.label_group>label:nth-child(2) {
     color: #d33;
     border-bottom: 3px solid #d33;
     padding-bottom: 10px;
 }
 
-.articles #tbl_1:checked~.tbl_2, .articles #tbl_2:checked~.tbl_1 {
+.articles #tbl_1:checked~.tbl_2,
+.articles #tbl_2:checked~.tbl_1 {
     display: none;
 }
 
@@ -552,7 +570,9 @@ header>.header_bottom a:hover {
     transform: translateX(10px);
 }
 
+
 /* 최근 기사 끝 */
+
 
 /* 푸터 시작 */
 
@@ -585,7 +605,9 @@ footer a:hover {
     color: #f7f7f7;
 }
 
+
 /* 푸터 끝 */
+
 
 /* 반응형 시작 */
 
@@ -622,7 +644,8 @@ footer a:hover {
         overflow: hidden;
         transition: .5s;
     }
-    header .header_bottom .ham_menu:hover nav, header .header_bottom .ham:hover~.ham_menu nav {
+    header .header_bottom .ham_menu:hover nav,
+    header .header_bottom .ham:hover~.ham_menu nav {
         height: 550px;
     }
     header .header_bottom .ham_menu nav * {
@@ -664,7 +687,9 @@ footer a:hover {
     }
 }
 
+
 /* 반응형 끝 */
+
 
 /* 서브 비주얼 시작 */
 
@@ -703,7 +728,9 @@ footer a:hover {
     font-size: 20px;
 }
 
+
 /* 서브 비주얼 끝 */
+
 
 /* 서브 뉴스 시작 */
 
@@ -739,7 +766,9 @@ footer a:hover {
     transform: translateX(10px);
 }
 
+
 /* 서브 뉴스 끝 */
+
 
 /* 대표 축제 시작 */
 
@@ -834,7 +863,9 @@ footer a:hover {
     cursor: default;
 }
 
+
 /* 대표 축제 끝 */
+
 
 /* 모달 시작 */
 
@@ -892,7 +923,9 @@ footer a:hover {
     outline: none;
 }
 
+
 /* 모달 끝 */
+
 
 /* 환율안내 시작 */
 
@@ -916,7 +949,9 @@ footer a:hover {
     font-size: 14px;
 }
 
+
 /* 환율안내 끝 */
+
 
 /* 로그인 페이지 시작 */
 
@@ -956,22 +991,23 @@ footer a:hover {
     font-size: 1rem;
 }
 
+
 /* 로그인 페이지 끝 */
+
 
 /* 축제 현황 목록 시작 */
 
 .festivalCS {
     width: 100%;
+    min-height: calc(100vh - 288px);
     margin-top: 120px;
 }
-
 
 .festivalCS .btn_group {
     margin: 20px 0;
 }
 
-
-.festivalCS  .pagination_group >a {
+.festivalCS .pagination_group>a {
     width: 30px;
     height: 30px;
     border: 1px solid #d33;
@@ -984,12 +1020,12 @@ footer a:hover {
     font-size: 14px;
 }
 
-.festivalCS  .pagination_group >a.active {
+.festivalCS .pagination_group>a.active {
     background-color: #d33;
     color: #fff;
 }
 
-.festivalCS  .pagination_group >a.disable {
+.festivalCS .pagination_group>a.disable {
     opacity: 0.5;
     cursor: default;
 }
@@ -1018,15 +1054,46 @@ footer a:hover {
     flex-wrap: wrap;
 }
 
-.update .image_group > div {
+.update .image_group>div {
     margin: 0 10px;
 }
-
 
 .update .btn_group {
     margin-top: 50px;
 }
 
 
-
 /* 축제 수정 폼 끝 */
+
+
+/* 축제 추가 폼 시작 */
+
+.insert {
+    width: 100%;
+    height: calc(100vh - 288px);
+    margin-top: 120px;
+}
+
+.insert .form_box {
+    width: 80%;
+    margin: 0 auto;
+}
+
+.insert .image_group {
+    background-color: #f3f3f3;
+    padding: 20px 25px;
+    border-radius: 5px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.insert .image_group>div {
+    margin: 0 10px;
+}
+
+.insert .btn_group {
+    margin-top: 50px;
+}
+
+
+/* 축제 추가 폼 끝 */

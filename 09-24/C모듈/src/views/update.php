@@ -5,8 +5,8 @@
             <h1><span class="bold">FESTIVAL</span> UPDATE</h1>
             <p>축제 현황 - 축제 수정 페이지</p>
         </div>
-        <form action="/update_process" method="post">
-            <input type="hidden" value="<?= $data[0]->idx ?>">
+        <form action="/update_process" method="post" enctype='multipart/form-data'>
+            <input type="hidden" name="idx"value="<?= $data[0]->idx ?>">
             <div class="form_box">
                 <div class="form-group">
                     <label for="">축제명</label>
@@ -29,9 +29,10 @@
                 <div class="form-group">
                     <label for="">축제 사진</label> <span class="small">삭제하고 싶은 사진을 선택 후 삭제 가능</span>
                     <div class="image_group">
+                        <input type="checkbox" name="delete_img[]" value="temp" style="display: none;" checked>
                         <?php foreach ($data[1] as $img) : ?>
                             <div>
-                                <input type="checkbox" name="delete_img" value="<?= $img->idx ?>"> <span><?= $img->name ?></span>
+                                <input type="checkbox" name="delete_img[]" value="<?= $img->idx ?>"> <span><?= $img->name ?></span>
                             </div>
                         <?php endforeach; ?>
                     </div>
@@ -39,12 +40,12 @@
                 <div class="form-group">
                     <label for="">추가 사진</label>
                     <div class="custom-file">
-                        <input type="file" name="add_images" endtype='multpart/form-data' class="custom-file-input" id="file_input" multiple>
+                        <input type="file" name="add_img[]"  class="custom-file-input" id="file_input" multiple>
                         <label for="file_input" class="custom-file-label">컨트롤을 누른 후 다중선택 가능</label>
                     </div>
                 </div>
                 <div class="btn_group flex_e">
-                    <button class="btn0 btn1" type="button" onclick="delete_festival()">삭제</button>
+                    <a href="/delete_process?idx=<?= $data[0]->idx ?>"><button class="btn0 btn1" type="button">삭제</button></a>
                     <button class="btn0 btn2">저장</button>
                 </div>
             </div>
@@ -53,8 +54,3 @@
 </div>
 
 
-<script>
-    function delete_festival() {
-
-    }
-</script>
