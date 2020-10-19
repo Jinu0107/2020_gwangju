@@ -45,7 +45,8 @@ class Festival {
                 dt: item.querySelector("dt").innerHTML,
                 cn: item.querySelector("cn").innerHTML,
                 images: Array.from(item.querySelectorAll("image")).map(x => x.innerHTML),
-                image_path: `/xml/festivalImages/${item.querySelector("sn").innerHTML.padStart(3, "0")}_${item.querySelector("no").innerHTML}`
+                image_path: `/xml/festivalImages/${item.querySelector("sn").innerHTML.padStart(3, "0")}_${item.querySelector("no").innerHTML}`,
+                c_image : `${item.querySelector("sn").innerHTML.padStart(3, "0")}_${item.querySelector("no").innerHTML}`
             };
         });
     }
@@ -221,7 +222,7 @@ class Festival {
 
     makeAlbumItem(item) {
         return `<div class="card" data-id="${item.id}" data-toggle="modal" data-target=".view_modal">
-                        <img src="${item.image_path}/${item.images[0]}" alt="No Image" title='No Image'>
+                        <img src="/getImage?folder=${item.c_image}&img=${item.images[0]}" alt="No Image" title='No Image'>
                         <div class="text">
                             <div class="title">
                                 ${item.nm}

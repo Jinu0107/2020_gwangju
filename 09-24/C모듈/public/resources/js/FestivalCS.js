@@ -61,7 +61,7 @@ class FestivalCS {
                 <tr>
                     <td><a href="/update?idx=${item.idx}" class="black_a">${item.idx}</a></td>
                     <td>
-                        <a href="" class="black_a">
+                        <a href="/festivalView?idx=${item.idx}" class="black_a">
                             ${item.name} <span class="tag">${item.cnt}</span>
                         </a>
                     </td>

@@ -79,7 +79,15 @@ class MainController extends MasterController
     public function insert()
     {
         $this->render("insert");
-        
+    }
+
+    public function festivalView()
+    {
+        $idx = $_GET['idx'];
+        $festival = DB::fetch("SELECT * FROM festivals WHERE idx = ?", [$idx]);
+        $imgs = DB::fetchAll("SELECT * FROM files WHERE pidx = ?", [$idx]);
+        $reviews = DB::fetchAll("SELECT * FROM reviews WHERE pidx = ?" , [$idx]);
+        $this->render('festivalView' , [$festival , $imgs , $reviews]);
     }
 }
 

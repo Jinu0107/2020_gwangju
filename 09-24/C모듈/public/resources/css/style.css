@@ -90,6 +90,54 @@ input {
     height: 100%;
 }
 
+.w_500 {
+    width: 500px;
+}
+
+.w_600 {
+    width: 600px;
+}
+
+.w_700 {
+    width: 700px;
+}
+
+.w_800 {
+    width: 800px;
+}
+
+.w_900 {
+    width: 900px;
+}
+
+
+.custom_modal {
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #0007;
+    z-index: 10;
+    display: none;
+}
+
+
+.custom_modal > .inner {
+    border-radius: 5px;
+    background-color: #fff;
+    height: 300px;
+    padding: 30px;
+}
+
+.custom_modal > .inner > .close_btn {
+    position: absolute;
+    font-size: 20px;
+    right: 30px;
+    top: 30px;
+    font-weight: bold;
+}
+
 input,
 select,
 textarea,
@@ -1097,3 +1145,101 @@ footer a:hover {
 
 
 /* 축제 추가 폼 끝 */
+
+
+
+/* 축제 상세 정보 페이지 시작 */
+
+.festivalView {
+    width: 100%;
+    margin-top: 120px;
+}
+
+.festivalView .inner {
+    width: 100%;
+}
+
+.festivalView .title {
+    font-size: 25px;
+    margin-bottom: 10px;
+    color: #000;
+}
+
+.festivalView .info {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    min-height: 300px;
+    grid-gap: 30px;
+    margin-bottom: 50px;
+}
+
+.festivalView .info img {
+    width: 100%;
+    object-fit: cover;
+}
+
+.festivalView .info .text {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.festivalView .text p {
+    font-size: 14px;
+    color: #888;
+}
+
+.festivalView .sub_img_box {
+    display: grid;
+    grid-template-columns: repeat(4 , 1fr);
+    gap: 30px;
+    margin-bottom: 50px;
+}
+
+.festivalView .sub_img_box > img {
+    width: 100%;
+    height: 255px;
+}
+
+.festivalView .review_item {
+    margin: 20px 0;
+}
+
+.festivalView .review_item .review_left {
+    width: 90%;
+}
+
+.festivalView .review_item .review_right {
+    width: 10%;
+}
+
+.festivalView .review_item .name_group {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.festivalView .review_item .name_group > p {
+    margin-bottom: 0;
+    margin-right: 20px;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.festivalView .review_item .name_group  i {
+    color: #d33;
+}
+
+.festivalView .review_item .review_left .text {
+    width: 100%;
+}
+
+#review_modal {
+    width: 1600px;
+}
+
+
+
+/* 축제 상세 정보 페이지 끝 */
+
+

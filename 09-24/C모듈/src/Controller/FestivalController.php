@@ -139,7 +139,6 @@ class FestivalController
         if ($files['name'][0] != "") {
             foreach ($files['name'] as $key => $value) {
                 $exit = strtolower(explode(".", $value)[count(explode(".", $value)) - 1]);
-                echo $exit;
                 if ($exit != "jpg" && $exit != "png" && $exit != "gif") {
                     continue;
                 }
@@ -151,5 +150,38 @@ class FestivalController
         }
 
         Library::msgAndGo("성공적으로 추가되었습니다.", "/festivalCS");
+    }
+
+    public function getImage()
+    {
+        header("Content-type: image/jpg");
+        $folder = $_GET['folder'];
+        $img = $_GET['img'];
+        if ($folder == "null") {
+            readfile(__IMAGE . "/" . $img);
+        } else {
+            readfile(__IMAGE . "/" . $folder . "/" . $img);
+        }
+    }
+
+    public function review()
+    {
+        extract($_POST);
+        $data = [$name, $score, $comment, $idx];
+        $data = array_map("trim", $data);
+        if (in_array("", $data)) {
+            Library::msgAndGo("모든 필드를 작성해주세요", "/festivalCS");
+            return;
+        }
+        $data = [null, $name, $score, $comment, $idx];
+        DB::execute("INSERT INTO `reviews`(`idx`, `name`, `score`, `comment`, `pidx`) VALUES (? , ? , ? , ? ,?)", $data);
+        Library::msgAndGo("성공적으로 작성되었습니다. ", "/festivalCS");
+    }
+
+    public function delete_review()
+    {
+        $idx = $_GET['idx'];
+        DB::execute("DELETE FROM reviews WHERE idx = ?", [$idx]);
+        Library::msgAndGo("리뷰가 성공적으로 삭제되었습니다.", "/festivalCS");
     }
 }
